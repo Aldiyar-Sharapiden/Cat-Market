@@ -55,7 +55,6 @@ article .old.price {
 }
 
 article .rating {
-    
     display: flex;
     justify-content: flex-end;
     flex-direction: row-reverse;
@@ -92,4 +91,83 @@ article .rating {
 
 .rating label:hover::after, .rating label:hover~label::after, .rating input:checked~label::after {
     opacity: 1;
+}
+
+#lines {
+    display: none;
+}
+
+#lines:checked~article {
+    display: block;
+    width: 100%;
+}
+
+#lines:checked~article .wrapper, #lines:checked~article .description {
+    display: inline-block;
+    vertical-align: top;
+    width: 340px;
+}
+
+#lines:checked~article .description p:first-child {
+    margin-top: 0;
+}
+
+#lines:checked~article .wrapper {
+    margin-left: 500px;
+    margin-right: 50px;
+}
+
+#lines:checked~article h3 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#lines:checked~article img {
+    margin-left: -500px;
+    bottom: auto;
+}
+
+
+.switcher {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    top: 10px;
+    border-radius: 3px;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.switcher:before, .switcher:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+    position: absolute;
+    left: 13px;
+    top: 13px;
+}
+
+.switcher:after {
+    top: 23px;
+}
+
+#lines:checked+.switcher:before {
+    border: 0;
+    width: 20px;
+    left: 10px;
+    height: 4px;
+    top: 8px;
+    background: #fff;
+}
+
+#lines:checked+.switcher:after {
+    border: 0;
+    width: 20px;
+    left: 10px;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    top: 18px;
 }
