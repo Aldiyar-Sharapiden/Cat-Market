@@ -1,0 +1,95 @@
+article {
+    display: inline-block;
+    vertical-align: top;
+    width: 345px;
+    margin: 100px 50px 200px 0;
+}
+
+article img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    transition: opacity .2s ease-out;
+}
+
+.link.cat {
+    position: relative;
+    display: block;
+    color: #2d2c94;
+    transition: color .2s ease-out;
+}
+
+.link.cat:hover {
+    color: red;
+}
+
+.image.cat:hover {
+    opacity: 0.7;
+}
+
+article h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 300px 0 4px;
+    padding-top: 66px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+article .price {
+    font-weight: bold;
+    color: red;
+    font-size: 130%;
+}
+
+article .old.price {
+    font-size: 80%;
+    font-weight: normal;
+    color: black;
+    display: inline;
+    text-decoration: line-through;
+}
+
+article .rating {
+    
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    display: block;
+    cursor: pointer;
+}
+
+.rating label::before {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    color: #101010;
+}
+
+.rating label::after {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    top: -16px;
+    color: yellow;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+.rating label:hover::after, .rating label:hover~label::after, .rating input:checked~label::after {
+    opacity: 1;
+}
